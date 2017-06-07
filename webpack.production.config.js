@@ -57,6 +57,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
+        CLASSIFIER_URL: JSON.stringify(process.env.CLASSIFIER_URL)
       },
     }),
     new webpack.optimize.UglifyJsPlugin({

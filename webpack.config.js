@@ -48,6 +48,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
+        CLASSIFIER_URL: JSON.stringify('http://localhost:5000')
       },
     }),
     new HtmlWebpackPlugin({
@@ -66,6 +67,7 @@ module.exports = {
       img: path.resolve(__dirname, './src/img'),
       lib: path.resolve(__dirname, './src/js/lib'),
       modules: path.resolve(__dirname, './src/js/modules'),
+      config: path.resolve(__dirname, './src/js/config'),
     },
   },
   devServer: {
