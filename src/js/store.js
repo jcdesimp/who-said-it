@@ -4,10 +4,10 @@ import { routerReducer } from 'react-router-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
-import counter from 'modules/counter';
+import classifier from 'modules/classifier';
 
 const reducer = combineReducers({
-  [counter.constants.name]: counter.reducer,
+  [classifier.constants.name]: classifier.reducer,
   routing: routerReducer,
 });
 

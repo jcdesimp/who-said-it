@@ -1,11 +1,10 @@
 
-
 import reducer from './reducer';
-import Counter from './components/counter';
 import * as constants from './constants';
+import ClassifierView from './components/ClassifierView';
 
 export default {
   constants,
-  Counter,
   reducer,
+  ClassifierView,
 };

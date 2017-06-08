@@ -9,7 +9,7 @@ import {
   IndexRoute
 } from 'react-router';
 
-import counter from 'modules/counter';
+import classifier from 'modules/classifier';
 import Home from 'lib/components/connectedHome';
 import NavigationFrame from 'lib/components/navigationFrame';
 import DevTools from 'lib/components/devTools';
@@ -21,10 +21,7 @@ const App = () => (
   <div>
     {process.env.NODE_ENV === 'production' ? null : <DevTools />}
     <Router history={history}>
-      <Route path="/" component={NavigationFrame}>
-        <IndexRoute component={Home} />
-        <Route path="counter" component={counter.Counter} />
-      </Route>
+      <Route path="/" component={classifier.ClassifierView} />
     </Router>
   </div>
   );
