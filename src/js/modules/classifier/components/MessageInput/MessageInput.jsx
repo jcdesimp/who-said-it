@@ -49,10 +49,12 @@ class MessageInput extends React.Component {
 
 MessageInput.propTypes = {
   submitMessage: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 MessageInput.defaultProps = {
   submitMessage: () => {},
+  loading: false,
 };
 
 export default MessageInput;

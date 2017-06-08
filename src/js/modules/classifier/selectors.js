@@ -1,7 +1,24 @@
 
-// import { createSelector } from 'reselect';
-// import from reselect if you're using it
+import { createSelector } from 'reselect';
 
 import { name } from './constants';
 
-export const exampleStateSelector = state => state[name].exampleState;
+export const loading = state => state[name].loading;
+
+const rawClassifyResult = state => state[name].classifyResult;
+
+export const classifyResult = createSelector(
+  rawClassifyResult,
+  (raw) => {
+    if (raw) {
+      return raw.classes.map(
+        e => ({
+          label: e.label.print_name,
+          probability: e.probability,
+        })
+      );
+    }
+
+    return null;
+  }
+);

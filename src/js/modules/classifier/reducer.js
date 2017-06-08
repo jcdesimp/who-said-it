@@ -1,18 +1,28 @@
-
-import {
-  ACTION_NAME
-} from './actionTypes';
+import * as actions from './actionTypes';
 
 const defaultState = {
-  exampleState: 0
+  loading: false,
+  classifyError: null,
+  classifyResult: null,
 };
 
 
 export default function (state = defaultState, action) {
   switch (action.type) {
-  case ACTION_NAME:
+  case actions.REQUEST_CLASSIFY:
     return Object.assign({}, state, {
-      exampleState: state.exampleState + 1
+      loading: true,
+    });
+  case actions.SUCCESS_CLASSIFY:
+    return Object.assign({}, state, {
+      loading: false,
+      classifyResult: action.result,
+    });
+  case actions.ERROR_CLASSIFY:
+    return Object.assign({}, state, {
+      loading: false,
+      classifyResult: null,
+      classifyError: action.error,
     });
   default:
     return state;

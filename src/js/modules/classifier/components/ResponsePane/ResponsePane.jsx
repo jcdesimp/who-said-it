@@ -22,7 +22,7 @@ const ResponsePane = (props) => {
     );
   }
 
-  const resultClasses = this.props.results.sort(
+  const resultClasses = props.results.sort(
     (a, b) => (a.probability - b.probability)
   ).reverse();
 
@@ -31,7 +31,7 @@ const ResponsePane = (props) => {
   return (
     <div>
       <span>
-        {`I'm ${(mostLikely.probability * 10).toFixed(2)}% sure this is ${mostLikely.label}.`}
+        {`I'm ${(mostLikely.probability * 100).toFixed(2)}% sure this is ${mostLikely.label}.`}
       </span>
     </div>
   );
