@@ -48,7 +48,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
-        CLASSIFIER_URL: JSON.stringify('http://localhost:5000')
+        CLASSIFIER_URL: JSON.stringify('http://localhost:5000'),
       },
     }),
     new HtmlWebpackPlugin({

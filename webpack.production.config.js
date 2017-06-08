@@ -88,6 +88,7 @@ module.exports = {
       img: path.resolve(__dirname, './src/img'),
       lib: path.resolve(__dirname, './src/js/lib'),
       modules: path.resolve(__dirname, './src/js/modules'),
+      config: path.resolve(__dirname, './src/js/config'),
     },
   },
 };
