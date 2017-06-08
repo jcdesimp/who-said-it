@@ -5,21 +5,21 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import {
   Router,
   Route,
-  browserHistory,
-  IndexRoute
+  browserHistory
 } from 'react-router';
 
 import classifier from 'modules/classifier';
-import Home from 'lib/components/connectedHome';
-import NavigationFrame from 'lib/components/navigationFrame';
-import DevTools from 'lib/components/devTools';
 import Store from './store';
+
+// Only load the dev tools in development
+const DevTools = (process.env.NODE_ENV === 'development') ?
+require('lib/components/devTools').default : f => f;
 
 const history = syncHistoryWithStore(browserHistory, Store);
 
 const App = () => (
   <div>
-    {process.env.NODE_ENV === 'production' ? null : <DevTools />}
+    {process.env.NODE_ENV === 'development' ? <DevTools /> : null}
     <Router history={history}>
       <Route path="/" component={classifier.ClassifierView} />
     </Router>
