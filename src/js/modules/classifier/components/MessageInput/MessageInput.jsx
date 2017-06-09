@@ -40,8 +40,19 @@ class MessageInput extends React.Component {
         <textarea
           onChange={this.handleInputChange}
           value={this.state.value}
+          style={{
+            width: '100%',
+            height: '200px',
+            fontSize: '1.2em',
+            resize: 'none',
+          }}
         />
-        <button onClick={this.submitMessage}>Submit</button>
+        <button
+          onClick={this.submitMessage}
+          style={{ display: 'block', width: '100%', height: '50px' }}
+        >
+          Submit
+        </button>
       </div>
     );
   }
