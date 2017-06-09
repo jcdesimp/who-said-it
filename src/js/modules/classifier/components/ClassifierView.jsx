@@ -3,7 +3,7 @@ import MessageInput from './MessageInput';
 import ResponsePane from './ResponsePane';
 
 const ClassifierView = props => (
-  <div>
+  <div style={{width: '100%'}}>
     <MessageInput />
     <ResponsePane />
   </div>

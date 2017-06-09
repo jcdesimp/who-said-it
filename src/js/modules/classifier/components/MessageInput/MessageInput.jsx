@@ -36,7 +36,7 @@ class MessageInput extends React.Component {
 
   render(props) {
     return (
-      <div>
+      <div style={{width: '100%'}}>
         <textarea
           onChange={this.handleInputChange}
           value={this.state.value}
@@ -45,6 +45,7 @@ class MessageInput extends React.Component {
             height: '200px',
             fontSize: '1.2em',
             resize: 'none',
+            boxSizing: 'border-box',
           }}
         />
         <button
