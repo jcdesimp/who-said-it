@@ -36,24 +36,14 @@ class MessageInput extends React.Component {
 
   render(props) {
     return (
-      <div style={{ width: '100%' }}>
-        <textarea
-          onChange={this.handleInputChange}
-          value={this.state.value}
-          style={{
-            width: '100%',
-            height: '200px',
-            fontSize: '1.2em',
-            resize: 'none',
-            boxSizing: 'border-box',
-          }}
-        />
-        <button
-          onClick={this.submitMessage}
-          style={{ display: 'block', width: '100%', height: '50px' }}
-        >
-          Submit
-        </button>
+      <div className="message-input-container">
+        <div className="message-input">
+          <textarea
+            placeholder="Type a message..."
+            onChange={this.handleInputChange}
+            value={this.state.value}
+          />
+        </div>
       </div>
     );
   }

@@ -14,6 +14,7 @@ body {
 #app-container {
     height: 100vh;
     width: 100%;
+    background-color: $neutralLight;
 }
 
 
@@ -42,3 +43,61 @@ body {
     }
     padding: 12px;
 }
+
+.message-input-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: $contentMaxWidth;
+    padding: 0 12px;
+    box-sizing: border-box;
+    .message-input {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+        &::before, &::after {
+            display: inline-block;
+            font-size: 3.4em;
+            width: 10px;
+            position: absolute;
+            width: 25px;
+            color: $textFade;
+        }
+
+        &::before {
+            vertical-align: top;
+            text-align: left;
+            content: '“';
+            margin-top: -9px;
+            top: -7px;
+            left: -15px;
+        }
+        &::after {
+            vertical-align: bottom;
+            text-align: right;
+            content: '”';
+            margin-bottom: -25px;
+            bottom: -12px;
+            right: -15px;
+
+        }
+        textarea {
+            border: none;
+            background-color: $neutralPrimary;
+            border-radius: 9px;
+            padding: 10px;
+            resize: none;
+            width: 100%;
+            box-sizing: border-box;
+            height: 200px;
+            &:focus {
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+
