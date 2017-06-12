@@ -9,6 +9,7 @@ const ClassifierView = props => (
       <h2>{'Type a message and I\'ll try to guess who said it.'}</h2>
     </div>
     <MessageInput />
+    <hr />
     <ResponsePane />
   </div>
 );

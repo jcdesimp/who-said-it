@@ -10,11 +10,16 @@ body {
     color: $primaryColor;
 }
 
+[data-reactroot] {
+    height: 100% !important;
+}
 
 #app-container {
     height: 100vh;
     width: 100%;
-    background-color: $neutralLight;
+    hr {
+        max-width: 550px;
+    }
 }
 
 
@@ -23,6 +28,9 @@ body {
 }
 
 .classifier-view {
+    background-color: $neutralLight;
+    min-height: 100%;
+    box-sizing: border-box;
     .heading {
         padding: 7px 0;
         box-sizing: border-box;
@@ -51,6 +59,7 @@ body {
     max-width: $contentMaxWidth;
     padding: 0 12px;
     box-sizing: border-box;
+    margin-bottom: 25px;
     .message-input {
         position: relative;
         display: inline-block;
@@ -98,6 +107,14 @@ body {
             }
         }
     }
+}
+
+.response-pane {
+    width: calc(100% - 15px);
+    max-width: calc($contentMaxWidth - 15px);
+    margin: 0 auto;
+    padding: 15px 0;
+    font-size: 1.6em;
 }
 
 

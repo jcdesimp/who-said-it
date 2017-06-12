@@ -38,7 +38,6 @@ export const msgIndex = {
 
 export function selectRandom(type) {
   const typeArray = msgIndex[type];
-  // msgIndex[type] ?
   if (typeArray) {
     return typeArray[Math.floor(Math.random() * typeArray.length)];
   }

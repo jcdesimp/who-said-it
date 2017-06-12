@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ResponsePane = (props) => {
   if (props.loading) {
     return (
-      <div>
+      <div className="response-pane">
         <span>
           {'Hmmm.....'}
         </span>
@@ -14,7 +14,7 @@ const ResponsePane = (props) => {
 
   if (!props.results) {
     return (
-      <div>
+      <div className="response-pane">
         <span>
           {'Type a message and I\'ll try to guess who said it!'}
         </span>
@@ -22,17 +22,11 @@ const ResponsePane = (props) => {
     );
   }
 
-  const resultClasses = props.results.sort(
-    (a, b) => (a.probability - b.probability)
-  ).reverse();
-
-  const mostLikely = resultClasses[0];
+  const resultClasses = ['response-pane', props.confidence.confidence];
 
   return (
-    <div>
-      <span>
-        {`I'm ${(mostLikely.probability * 100).toFixed(2)}% sure this is ${mostLikely.label}.`}
-      </span>
+    <div className={resultClasses.join(' ')}>
+      <span dangerouslySetInnerHTML={{ __html: props.confidence.response }} />
     </div>
   );
 };
@@ -40,16 +34,21 @@ const ResponsePane = (props) => {
 ResponsePane.propTypes = {
   results: PropTypes.arrayOf(
     PropTypes.shape({
-      label: React.PropTypes.string,
-      probability: React.PropTypes.number,
+      label: PropTypes.string,
+      probability: PropTypes.number,
     })
   ),
-  loading: React.PropTypes.bool,
+  loading: PropTypes.bool,
+  confidence: PropTypes.shape({
+    confidence: PropTypes.string,
+    response: PropTypes.string,
+  }),
 };
 
 ResponsePane.defaultProps = {
   results: null,
   loading: false,
+  confidence: null,
 };
 
 export default ResponsePane;

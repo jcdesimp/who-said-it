@@ -4,13 +4,15 @@ import ResponsePane from './ResponsePane';
 
 import {
   loading,
-  classifyResult
+  classifyResult,
+  confidenceSelector
 } from '../../selectors';
 
 const ConnectedResponsePane = connect(
   createStructuredSelector({
     loading,
     results: classifyResult,
+    confidence: confidenceSelector,
   }),
   () => ({})
 )(ResponsePane);
