@@ -24,6 +24,9 @@ const ClassifierView = (props) => {
         results={props.results}
         confidence={props.confidence}
       />
+      <div className="footer">
+        Created By <a href="https://github.com/jcdesimp" target="_blank">Jcdesimp</a>.
+      </div>
     </div>
   );
 };
