@@ -34,11 +34,16 @@ class MessageInput extends React.Component {
   }
 
 
-  render(props) {
+  render() {
+    const classNames = [];
+
+    if (this.props.confidence) classNames.push(this.props.confidence.confidence);
+
     return (
       <div className="message-input-container">
         <div className="message-input">
           <textarea
+            className={classNames.join(' ')}
             placeholder="Type a message..."
             onChange={this.handleInputChange}
             value={this.state.value}
@@ -52,11 +57,16 @@ class MessageInput extends React.Component {
 MessageInput.propTypes = {
   submitMessage: PropTypes.func,
   loading: PropTypes.bool,
+  confidence: PropTypes.shape({
+    confidence: PropTypes.string,
+    response: PropTypes.string,
+  }),
 };
 
 MessageInput.defaultProps = {
   submitMessage: () => {},
   loading: false,
+  confidence: null,
 };
 
 export default MessageInput;

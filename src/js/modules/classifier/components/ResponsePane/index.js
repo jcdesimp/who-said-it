@@ -9,11 +9,7 @@ import {
 } from '../../selectors';
 
 const ConnectedResponsePane = connect(
-  createStructuredSelector({
-    loading,
-    results: classifyResult,
-    confidence: confidenceSelector,
-  }),
+  () => ({}),
   () => ({})
 )(ResponsePane);
 

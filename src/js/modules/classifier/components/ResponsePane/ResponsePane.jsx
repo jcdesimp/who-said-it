@@ -22,10 +22,9 @@ const ResponsePane = (props) => {
     );
   }
 
-  const resultClasses = ['response-pane', props.confidence.confidence];
 
   return (
-    <div className={resultClasses.join(' ')}>
+    <div className="response-pane">
       <span dangerouslySetInnerHTML={{ __html: props.confidence.response }} />
     </div>
   );

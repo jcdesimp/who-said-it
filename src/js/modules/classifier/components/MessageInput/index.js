@@ -4,14 +4,9 @@ import MessageInput from './MessageInput';
 import {
   requestClassifyMessage
 } from '../../actions';
-import {
-  loading
-} from '../../selectors';
 
 const ConnectedMessageInput = connect(
-  createStructuredSelector({
-    loading,
-  }),
+  () => ({}),
   dispatch => ({
     submitMessage: msg => dispatch(requestClassifyMessage(msg)),
   })
