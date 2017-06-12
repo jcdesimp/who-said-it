@@ -135,7 +135,7 @@ body {
 
 .response-pane {
     width: calc(100% - 15px);
-    max-width: calc($contentMaxWidth - 15px);
+    max-width: $contentMaxWidth - 15px;
     margin: 0 auto;
     padding: 15px 0;
     font-size: 1.6em;
