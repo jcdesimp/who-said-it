@@ -28,3 +28,9 @@ export function requestClassifyMessage(msg) {
     });
   };
 }
+
+export function toggleDetail() {
+  return {
+    type: actions.TOGGLE_DETAIL,
+  };
+}

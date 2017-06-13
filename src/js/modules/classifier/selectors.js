@@ -7,6 +7,8 @@ export const loading = state => state[name].loading;
 
 const rawClassifyResult = state => state[name].classifyResult;
 
+export const showDetailsSelector = state => state[name].showDetails;
+
 export const classifyResult = createSelector(
   rawClassifyResult,
   (raw) => {
@@ -24,6 +26,7 @@ export const classifyResult = createSelector(
     return null;
   }
 );
+
 
 export const confidenceSelector = createSelector(
   classifyResult,

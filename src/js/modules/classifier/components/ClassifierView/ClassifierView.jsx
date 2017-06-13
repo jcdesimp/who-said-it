@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MessageInput from '../MessageInput';
 import ResponsePane from '../ResponsePane';
 
+
 const ClassifierView = (props) => {
   const classNames = ['classifier-view'];
 
@@ -24,8 +25,14 @@ const ClassifierView = (props) => {
         results={props.results}
         confidence={props.confidence}
       />
+      <div className="detail-button-container">
+        <button onClick={props.handleDetailToggle}>
+          {`${props.showDetails ? 'Hide' : 'Show'} Details`}
+        </button>
+      </div>
+      <hr className="detail-hr" />
       <div className="footer">
-        Created By <a href="https://github.com/jcdesimp" target="_blank">Jcdesimp</a>.
+        Created By <a href="https://github.com/jcdesimp" target="_blank" rel="noopener noreferrer">Jcdesimp</a>.
       </div>
     </div>
   );
@@ -44,12 +51,16 @@ ClassifierView.propTypes = {
     confidence: PropTypes.string,
     response: PropTypes.string,
   }),
+  handleDetailToggle: PropTypes.func,
+  showDetails: PropTypes.bool,
 };
 
 ClassifierView.defaultProps = {
   results: null,
   loading: false,
   confidence: null,
+  handleDetailToggle: () => {},
+  showDetails: false
 };
 
 export default ClassifierView;

@@ -18,7 +18,7 @@ body {
     height: 100vh;
     width: 100%;
     hr {
-        max-width: 550px;
+        max-width: $contentMaxWidth + 50px;
     }
 }
 
@@ -33,6 +33,7 @@ body {
     box-sizing: border-box;
     transition: background-color 1s;
     position: relative;
+    padding: 12px;
 
     &.confident {
         background-color: $confidentLight;
@@ -62,7 +63,29 @@ body {
             margin-bottom: 20px;
         }
     }
-    padding: 12px;
+
+    .detail-button-container {
+        max-width: $contentMaxWidth + 20px;
+        width: calc(100% + 20px);
+        margin: 0 auto;
+
+        button {
+            background: none;
+            border: none;
+            display: inline;
+            cursor: pointer;
+            color: $primaryColor;
+            padding-left: 0;
+            &:hover {
+                text-decoration: underline;
+                color: $primaryColor;
+            }
+        }
+    }
+
+    .detail-hr {
+        margin-top: 0;
+    }
 }
 
 .message-input-container {
