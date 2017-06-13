@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MessageInput from '../MessageInput';
 import ResponsePane from '../ResponsePane';
-
+import DetailsTable from '../DetailsTable';
 
 const ClassifierView = (props) => {
   const classNames = ['classifier-view'];
@@ -31,6 +31,14 @@ const ClassifierView = (props) => {
         </button>
       </div>
       <hr className="detail-hr" />
+      {
+        props.showDetails ?
+        (
+          <DetailsTable
+            results={props.results}
+          />
+        ) : null
+      }
       <div className="footer">
         Created By <a href="https://github.com/jcdesimp" target="_blank" rel="noopener noreferrer">Jcdesimp</a>.
       </div>
