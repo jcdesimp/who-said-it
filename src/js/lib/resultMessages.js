@@ -1,6 +1,6 @@
 const confident = [
   'This definitely seems like something #P0# would say.',
-  'I\'m pretty sure these is #P0#\'s words.',
+  'I\'m pretty sure these are #P0#\'s words.',
   'This has to be #P0#, I\'m sure of it!',
 ];
 
@@ -17,13 +17,13 @@ const unsure2 = [
 
 const indifferent = [
   'I think it\'s #P0#.',
-  'I think it might be #P0#.',
+  'I think this might be #P0#.',
   'This sounds like it could be #P0#.',
   'This sounds like something #P0# might say.',
 ];
 
 const indifferent2 = [
-  'I think its either #P0# or #P1#.',
+  'I think it\'s either #P0# or #P1#.',
   'This must be either #P0# or #P1#.',
 ];
 
