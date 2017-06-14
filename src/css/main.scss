@@ -19,6 +19,8 @@ body {
     width: 100%;
     hr {
         max-width: $contentMaxWidth + 50px;
+        border: solid 1px $primaryColor;
+        border-bottom: none;
     }
 }
 

@@ -36,7 +36,7 @@ const DetailsTable = (props) => {
       </table>
     </div>
   );
-}
+};
 
 export default DetailsTable;
 
